@@ -312,18 +312,21 @@ while True:
             continue
     elif choice == choices[4]:
         # ANALYZE
-        choices = ["Show all habits", "Show the habit with best streak", "Show the most completed habit", "Back"]
+        choices = ["Show all habits", "Show the same periodicity habit", "Show the habit with longest streak", "Show the streak of given habit", "Back"]
         choice = questionary.select("\nSelect the habit you want to update: ", choices=choices).ask()
         if choice == choices[0]:
             Analytics.show_all_habits()
             input("Press Enter to continue!")
         elif choice == choices[1]:
-            Analytics.show_best_streak_habit()
+            Analytics.show_same_periodicity_habit()
             input("Press Enter to continue!")
         elif choice == choices[2]:
-            Analytics.show_most_completed_habit()
+            Analytics.show_longest_streak_habit()
             input("Press Enter to continue!")
         elif choice == choices[3]:
+            Analytics.show_given_habit()
+            input("Press Enter to continue!")
+        elif choice == choices[4]:
             continue
     elif choice == choices[5]:
         Habit.clear_all_data()
